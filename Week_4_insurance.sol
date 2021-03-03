@@ -1,23 +1,17 @@
 //SPDX-License-Identifier: MIT
 pragma solidity >=0.6.0 <0.8.1;
 
-/**
- * @title Tech Insurance tor
- * @dev 
- * Step1: Complete the functions in the insurance smart contract
- * Step2:Add any required methods that are needed to check if the function are called correctly, 
- * and also add a modifier function that allows only the owner can run the changePrice function.
- * Step3: Add any error handling that may occur in any function
- * Step 4: add ERC 721 Token
- * 
- */
-contract TechInsurance {
+
+
+contract TechInsurance 
+ {
     
     /** 
      * Defined two structs
      * 
      * 
      */
+
     struct Product {
         uint productId;
         string productName;
@@ -34,32 +28,60 @@ contract TechInsurance {
     mapping(uint => Product) public productIndex;
     mapping(address => mapping(uint => Client)) public client;
     
+    mapping(uint => address) public productid2client;
+    
     uint productCounter;
     
     address payable insOwner;
+    
     constructor(address payable _insOwner) public{
-        insOwner = _insOwner;
+
+      insOwner = _insOwner;
     }
  
     function addProduct(uint _productId, string memory _productName, uint _price ) public {
- 
+        productCounter++; 
+        Product memory newProduct =Product(_productId, _productName, _price, true);
+        productIndex[productCounter++] = newProduct;
     }
     
-    
-    function changeFalse(uint _productIndex) public {
-
+     
+    function doNotOffer(uint _productIndex) public {
+        require (msg.sender == insOwner, "not owner"); 
+     productIndex [_productIndex].offered= false;
     }
     
-    function changeTrue(uint _productIndex) public {
-
+    function forOffer(uint _productIndex) public {
+    require (msg.sender == insOwner, "not owner"); 
+     productIndex [_productIndex].offered= true;
     }
     
     function changePrice(uint _productIndex, uint _price) public {
-
+    require (msg.sender == insOwner, 'not owner');
+    productIndex [_productIndex].price = _price;
     }
     
-    function clientSelect(uint _productIndex) public payable {
+    /**
+    * @dev 
+    * Every client buys an insurance, 
+    * you need to map the client's address to the id of product to struct client, using (client map)
+    */
+    
+    function checkProductIndex (uint _productIndex) public returns (bool) {
+        
+    }
+    function buyInsurance(uint _productIndex) public payable {
+        
+        require (productIndex[_productIndex].offered == true, 'product not offered');
+        
+        address buyer_address =  msg.sender;
+        address product_seller_address = productid2client[_productIndex];
+        require(product_seller_address !=buyer_address , "you cant buy from yourself.");
+        productid2client[_productIndex]= buyer_address;
+        productIndex[_productIndex].offered == false;
         
     } 
+    
+   
     
 }

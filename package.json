@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "chai": "npm:undefined@*",
+    "mocha": "npm:undefined@*"
+  }
+}

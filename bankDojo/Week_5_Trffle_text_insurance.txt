@@ -1,0 +1,94 @@
+PS C:\WINDOWS\system32> truffle develop
+Truffle Develop started at http://127.0.0.1:9545/
+
+Accounts:
+(0) 0xf214f7a89d0e61b478a31a86f66610d966826c6b
+(1) 0x33c47d65b47275aef63f908fa1b18236c4b5d541
+(2) 0x5d3080e2616bef9a72acb7617fa65a8756e4c949
+(3) 0xa9ae6248475c0136c5f22e2439a1fe0e3b3036e0
+(4) 0x026634c07301d352d5e93dcc39b44bd21e370748
+(5) 0xeb5b980fd997cdf45d7b6b11a818cd939c324ec9
+(6) 0x4ff86069fc1071c01bed3ed14e0479281cd734f1
+(7) 0x23f485232ea3297f4dc7d0fa022e642a6a1deebd
+(8) 0xdf0b797011a840fee531a9bff12e5c330139da48
+(9) 0x160adc275ed9b6fec82a769a55f73f9c98fa3852
+
+Private Keys:
+(0) d90517bb534df0835599d590350ce9b980c4516e6bc6845fb4712d7cdbc56c0e
+(1) 285de97fce598a3a7fa3ad43ea763554c9bf2d116017758c8bd30b28376c9bb7
+(2) 0a39b0806880fa1166325d58214173303f1bebbccd5537dac0707ccb0baa4292
+(3) 757fd76f9b1f087bb7a080f25d9f631e3727cdb157e6b5cd8e7dc2d839bef722
+(4) fc81d36323de4d99ad9b0c29978bdbc2b505ad2a946d100827873ef6e2d94b42
+(5) a51c5f3afdb07d814dba91eff4fb2bf62cd913c2e7c454fccbb2eda2b13d706e
+(6) 7813aabd16a9121a74504d61693d6eb47e26d30e8cc2ca9d1f49a90f742d7cc1
+(7) ea6c6d555f76a6c74784c5f3e003a2259eb09e76d087191d23da959ec47ddcf6
+(8) 4583c2329c20155cc8bfdf213de3afe890d7dbf3048dc87d0e770a224b2bc558
+(9) 09dfea3195d7882f356bdef39efbbd4e04f9828a9d761fd224040d89ffa4adb3
+
+Mnemonic: illegal earn dinner force coconut pitch slush inch again receive rebuild palace
+
+⚠️  Important ⚠️  : This mnemonic was created for you by Truffle. It is not secure.
+Ensure you do not use it on production blockchains, or else you risk losing funds.
+
+truffle(develop)> migrate
+
+Compiling your contracts...
+===========================
+> Compiling .\contracts\Migrations.sol
+> Artifacts written to C:\WINDOWS\system32\build\contracts
+> Compiled successfully using:
+   - solc: 0.5.16+commit.9c3226ce.Emscripten.clang
+
+
+
+Starting migrations...
+======================
+> Network name:    'develop'
+> Network id:      5777
+> Block gas limit: 6721975 (0x6691b7)
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0x7346c2245b2342c5f317aa5366c15e7d431a925cd56fbfc27ac79a8763e89493
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x81E57EDcf470F56cbDd711e6074A436F7c51eAB8
+   > block number:        1
+   > block timestamp:     1615379740
+   > account:             0xf214f7a89D0e61B478a31A86F66610D966826c6B
+   > balance:             99.99616114
+   > gas used:            191943 (0x2edc7)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00383886 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00383886 ETH
+
+
+Summary
+=======
+> Total deployments:   1
+> Final cost:          0.00383886 ETH
+
+
+- Blocks: 0            Seconds: 0
+- Saving migration to chain.
+
+truffle(develop)> test
+Using network 'develop'.
+
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+  0 passing (0ms)
